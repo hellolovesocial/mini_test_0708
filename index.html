@@ -77,7 +77,7 @@
     <h1>LIFFテストページ</h1>
     <img id="profile_img" class="profile" src=""/>
     <h2 id="profile_name"></h2>
-    <p>LIFFの作成を色々と試すためのページです。</p>
+    <p>LIFFの作成を色々と試すためのページです。.</p>
     <button class="btn" id="shareFriends">share to friends</button><br>
     <button class="btn" id="closeWindowButton">close</button>
   </body>
@@ -118,12 +118,99 @@
       if (liff.isApiAvailable("shareTargetPicker")) {
         liff
           .shareTargetPicker(
-            [
-              {
-                type: "text",
-                text: "Hello, World!",
-              },
-            ],
+            [{
+            "type": "flex",
+            "altText": "LIFFがシェアされました。",
+            "contents": {
+            "type": "bubble",
+            "body": {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "LIFF test",
+                  "weight": "bold",
+                  "size": "xl"
+                },
+                {
+                  "type": "box",
+                  "layout": "vertical",
+                  "margin": "lg",
+                  "spacing": "sm",
+                  "contents": [
+                    {
+                      "type": "box",
+                      "layout": "baseline",
+                      "spacing": "sm",
+                      "contents": [
+                        {
+                          "type": "text",
+                          "text": "作成者",
+                          "color": "#aaaaaa",
+                          "size": "sm",
+                          "flex": 1
+                        },
+                        {
+                          "type": "text",
+                          "text": "みなこ さたけ",
+                          "wrap": true,
+                          "color": "#666666",
+                          "size": "sm",
+                          "flex": 5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "box",
+                      "layout": "baseline",
+                      "spacing": "sm",
+                      "contents": [
+                        {
+                          "type": "text",
+                          "text": "目的",
+                          "color": "#aaaaaa",
+                          "size": "sm",
+                          "flex": 1
+                        },
+                        {
+                          "type": "text",
+                          "text": "LIFFをテストしてみること",
+                          "wrap": true,
+                          "color": "#666666",
+                          "size": "sm",
+                          "flex": 5
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "footer": {
+              "type": "box",
+              "layout": "vertical",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "button",
+                  "style": "link",
+                  "height": "sm",
+                  "action": {
+                    "type": "uri",
+                    "label": "開く",
+                    "uri": "https://liff.line.me/1654391458-ZXkyBBy8"
+                  }
+                },
+                {
+                  "type": "spacer",
+                  "size": "sm"
+                }
+              ],
+              "flex": 0
+            }
+          }
+          }],
             {
               isMultiple: true,
             }
